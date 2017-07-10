@@ -18,11 +18,11 @@ angular.module('starter.controllers', [])
     var results = $firebaseArray(ref);
 
     var arealistArray=[];
-    $scope.arealist=[]; 
+    $scope.arealist=[];
 
     results.$loaded(function(x) {
         $scope.results = results;
-        
+
         var fianalresult = $scope.results;
 
         angular.forEach(fianalresult, function(value, key) {
@@ -326,8 +326,8 @@ angular.module('starter.controllers', [])
 
 
 
-        // firebase.auth().onAuthStateChanged(function(user) { 
-        //   user.sendEmailVerification(); 
+        // firebase.auth().onAuthStateChanged(function(user) {
+        //   user.sendEmailVerification();
         // });
 
         // $scope.isverified = user.emailVerified
@@ -358,14 +358,14 @@ angular.module('starter.controllers', [])
                 }]
             });
 
-            // firebase.auth().onAuthStateChanged(function(user) { 
+            // firebase.auth().onAuthStateChanged(function(user) {
             //   if (user.emailVerified) {
             //     console.log('Email is verified');
             //     $state.go('signin')
             //   }
             //   else {
             //   console.log('Email is not verified');
-            //     user.sendEmailVerification(); 
+            //     user.sendEmailVerification();
             //     var alertPopup = $ionicPopup.alert({
             //       title: 'Woof',
             //       template: 'You have recieved an email verification',
@@ -380,7 +380,7 @@ angular.module('starter.controllers', [])
             //        },
             //      ]
             //     });
-            //   }   
+            //   }
             // });
             $state.go('thanks');
         } else {
@@ -447,6 +447,13 @@ angular.module('starter.controllers', [])
     //     return this * Math.PI / 180;
     // }
 
+    var distance = 0;
+    var speed = 5.5;
+
+    $scope.$on('$stateChangeSuccess', function () {
+      $scope.restartWalk();
+    });
+
 
     $scope.walkstate = "Pause Walk";
 
@@ -464,13 +471,6 @@ angular.module('starter.controllers', [])
     $scope.restartWalk = function() {
         $scope.startTimer();
     }
-
-    $scope.finishWalk = function() {
-        $scope.stopTimer();
-        $state.go('rating');
-    }
-
-
     $scope.startTimer = function() {
         $scope.$broadcast('timer-start');
         $scope.timerRunning = true;
@@ -488,7 +488,43 @@ angular.module('starter.controllers', [])
 
     $scope.$on('timer-stopped', function(event, data) {
         console.log('Timer Stopped - data = ', data);
+
+        //Calculating the distance based on how much time the user walks their dog for
+        if(data.hours){
+          cosole.log("hours");
+          distance = speed*data.hours;
+          cosole.log("d= " + distance);
+        }
+        if (data.minutes) {
+          console.log("minutes");
+          distance = speed*(data.minutes/60);
+          console.log("d= " + distance);
+        }
+        if (data.hours && data.minutes && data.seconds) {
+          cosole.log("Hours minutes and seconds");
+          distance = speed*data.hours + speed*(data.minutes/60) + speed*(data.seconds/3600);
+          console.log("d= " + distance);
+        }
+        if(data.hours && data.minutes){
+          cosole.log("Hours and minutes");
+          distance = speed*data.hours + speed*(data.minutes/60);
+          console.log("d= " + distance);
+        }
+        if (data.minutes && data.seconds && !data.hours) {
+          console.log("minutes and seconds");
+          distance = speed*(data.minutes/60) + speed*(data.seconds/3600);
+          console.log("d= " + distance);
+        }
+
+        store.set("finalD", distance);
     });
+
+    $scope.finishWalk = function() {
+        $scope.stopTimer();
+        $state.go('rating');
+    }
+
+
 
 })
 
@@ -724,7 +760,7 @@ angular.module('starter.controllers', [])
     }
 
     var arrayref = firebase.database().ref().child("Users").child($scope.username).child('walkingDogs');
-    $scope.dogs = $firebaseArray(arrayref)    
+    $scope.dogs = $firebaseArray(arrayref)
     $scope.dogos = $firebaseArray(arrayref)
 
     $scope.findDog = function() {
@@ -759,7 +795,7 @@ angular.module('starter.controllers', [])
                 }
             }, {
                 text: 'Close'
-            }, 
+            },
 
             ]
         });
@@ -771,20 +807,26 @@ angular.module('starter.controllers', [])
 
 .controller('ownerCtrl', function($scope, $stateParams) {})
 
-.controller('ratingCtrl', function($scope, $stateParams, $ionicPopup, $state, store, $firebaseObject) {
+.controller('ratingCtrl', function($scope, $stateParams, $ionicPopup, $state, store, $firebaseObject, $timeout) {
+
+    $timeout(function() {
+        console.log("rating");
+    });
+
     $scope.dogname = store.get("viewingdog")
     $scope.dogimage = store.get("viewingdogimg")
     var dogownerid = store.get("dogownerid")
 
-    $scope.finalDistance = store.get("distance")
+    $scope.finalDistance = store.get("finalD");
+    console.log("final D = " + $scope.finalDistance);
 
     console.log(dogownerid);
 
     var ref = firebase.database().ref().child("Users").child(dogownerid);
     var nameref = ref.child("fName")
-    
+
     var ownername = $firebaseObject(nameref)
-        
+
     ownername.$loaded(function() {
         $scope.personname = ownername.$value
         console.log($scope.personname)
@@ -801,13 +843,6 @@ angular.module('starter.controllers', [])
             cssClass: 'forfidopopup',
 
             buttons: [{
-                text: 'No Thanks',
-                type: 'button',
-                onTap: function(e) {
-                    $state.go('tabs')
-                },
-
-            }, {
                 text: '<b>Yes please</b>',
                 type: 'button-positive',
                 onTap: function(e) {
@@ -819,6 +854,14 @@ angular.module('starter.controllers', [])
                     }
 
                 }
+            },
+            {
+                text: 'No Thanks',
+                type: 'button',
+                onTap: function(e) {
+                    $state.go('tabs')
+                },
+
             }]
         });
 
