@@ -245,7 +245,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase', 'ionic.co
         controller: 'profileCtrl'
     })
 
-    // NEW 
+    // NEW
 
     // .state('walker', {
     //   url: '/walker',
@@ -261,12 +261,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase', 'ionic.co
 
     .state('messages', {
         url: '/messages',
-        views: {
-            'walker-tab': {
-                templateUrl: 'templates/messages.html',
-                controller: 'messagesCtrl'
-            }
-        }
+        templateUrl: 'templates/messages.html',
+        controller: 'messagesCtrl'
     })
 
     .state('rating', {
@@ -293,7 +289,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase', 'ionic.co
     //   controller: 'homeCtrl'
     // })
 
-    // END NEW 
+    // END NEW
 
     .state('doglist', {
         url: '/doglist',
