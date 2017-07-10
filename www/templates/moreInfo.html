@@ -1,0 +1,19 @@
+<ion-view class = "moreInfo">
+	<ion-content>
+	<center>
+	    	<input type="text" placeholder="First name" ng-model="firstname">
+
+	    	<input type="text" placeholder="Last name" ng-model="lastname">
+	     	<input type="text" placeholder="Home address" google-autocomplete-suggestion location="data.location" country-code="{{countryCode}}" on-selection="onAddressSelection(location)" ng-model="data.location.formatted_address">
+
+	  		<input type="tel" placeholder="Mobile (+61)" ng-model="mobile">
+	</center>
+
+	    <span class = "circle webcamjs-ios-text" ng-click="uploadPhoto()" id = "iosPlaceholderText" >
+			<i class = "icon ion-android-camera"></i>
+		</span>
+
+		<button class = "registerbtn" ng-click = "register(firstname, lastname, data.location.formatted_address, mobile)">Begin!</button>
+
+    </ion-content>
+</ion-view>

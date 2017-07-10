@@ -1,0 +1,105 @@
+<ion-view class="dogswipe">
+
+	<script id="dogmodal.html" type="text/ng-template">
+	  <ion-modal-view class="dogpage" on-swipe-down="closedogmodal()" on-swipe-up="closedogmodal()">
+	    <center>
+			<div class="downcirclebox" ng-click="closedogmodal()">
+				<i class="icon greenicon ion-arrow-down-b"></i>
+			</div>
+
+			<img src="img/load.gif" ng-src="{{dogpicture}}" class="dogpicture">
+			<h1 ng-click="specialpopup2()"><span>{{dogname}}</span></h1>
+			<h2>{{dogbreed}}</h2>
+
+			<h3>Temperment</h3>
+			<div class="row corerow">
+				<div class="col">{{dogtemperment}}</div>
+				<div class="col">
+					<i class="icon happyicon ion-ios-paw"></i>
+				</div>
+			</div>
+
+			<h3>Fitness Level</h3>
+			<div class="row corerow">
+				<div class="col">{{dogfitness}}</div>
+				<div class="col">
+					<i class="icon happyicon ion-ios-paw"></i>
+				</div>
+			</div>
+
+			<h3>Age</h3>
+			<span class="agenumber">{{dogage}}</span>
+
+			<h3 class="needs">Special Needs</h3>
+			<div class="needstextblock">
+				<p>{{dogneeds}}</p>
+			</div>
+
+		</center>
+	  </ion-modal-view>
+	</script>
+
+	<button class="button button-icon icon ion-arrow-left-c" ui-sref="tabs"></button>
+
+    <div ng-if="cards.active">
+    	<td-cards>
+        	<td-card ng-repeat="card in cards.active" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight(card)" ng-click="opendogmodal(card)">
+            	<div class="image">
+              		<div class="no-text"><i class="icon ion-close-round"></i></div>
+              		<div class="yes-text"><i class="icon ion-checkmark-round"></i></div>
+
+              		<img ng-src="{{ card.photo }}" src="img/load.gif" on-swipe-up="swipedup()">
+           			
+           			<div class="stars row">
+           				<div class="col">
+           					<i class="icon ion-ios-star"></i>
+           				</div>
+           				<div class="col">
+           					<i class="icon ion-ios-star"></i>
+           				</div>
+           				<div class="col">
+           					<i class="icon ion-ios-star-half"></i>
+           				</div>
+           				<div class="col">
+           					<i class="icon ion-ios-star-outline"></i>
+           				</div>
+           				<div class="col">
+           					<i class="icon ion-ios-star-outline"></i>
+           				</div>
+           			</div>
+
+           			<div class="infotext">
+           				<h1>{{card.name}}</h1>
+           				<p>12 year old {{card.temperment}} {{card.breed}}</p>
+           			</div>
+           		</div>
+          	</td-card>
+
+          	<center class="golow">
+	          	<div class="row">
+	          		<div class="col">
+	          			<div class="iconcircle xcirc" ng-click="specialpopup()">
+	          				<i class="icon ion-close-round"></i>
+	          			</div>
+	          		</div>
+
+	          		<div class="col">
+	          			<div class="iconcircle rcirc" ng-click="specialpopup()">
+	          				<i class="icon ion-refresh"></i>
+	          			</div>
+	          		</div>
+
+	          		<div class="col">
+	          			<div class="iconcircle ccirc" ng-click="specialpopup()">
+	          				<i class="icon ion-checkmark-round"></i>
+	          			</div>
+	          		</div>
+	          	</div>	
+          	</center>
+
+          	<td-card id="end-card" drag="false">
+            	<i class="icon ion-ios-refresh" ng-click="refreshCards()"></i>
+          	</td-card>
+        </td-cards>
+      </div>
+</ion-view>

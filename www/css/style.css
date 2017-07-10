@@ -1,0 +1,1321 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Lato:300,400,700');
+
+
+.tabsheader{
+	background-color: #6C6049;
+}
+
+.tabsheader .title{
+	font-family: 'Fredoka One', cursive;
+	color: #68B4A6;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.tabsheader button{
+	color: #68B4A6;
+}
+
+.tabsheader .icon{
+}
+
+.tab-nav {
+	background-color: #6C6049 !important
+}
+
+.tab-nav i{
+	font-size: 24px !important;
+	color: #68B4A6 !important;
+}
+
+.spinner-special{
+  stroke: #68B4A6;
+  fill: #68B4A6;
+}
+
+
+.slideInLeft.ng-leave,
+.slideInLeft > .ng-leave {
+  animation-name: slideOutLeft !important;
+}
+
+.slideInRight.ng-leave,
+.slideInRight > .ng-leave {
+  animation-name: slideOutRight !important;
+}
+
+
+/* DOG PAGE */
+
+.dogpage{
+	background-color: #ecf0f1;
+}
+
+.dogpage h1{
+	margin-top: 0%;
+	font-family: 'Fredoka One', cursive;
+	color: #68B4A6;
+	text-transform: uppercase;
+}
+.dogpage h1 span{
+	border-bottom: 2px dotted #68B4A6;
+}
+
+.dogpage h2{
+	margin-top: 5%;
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	font-size: 14px;
+}
+
+.dogpage h3{
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #A7A9AC;
+	font-size: 21px;
+	float: left;
+	margin-left: 15%;
+	margin-top: 3%;
+}
+
+.dogpage .dogpicture{
+	margin-top: 10%;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: 10%;
+	border: 4px solid #6C6049;
+}
+.dogpage .corerow{
+	margin-top: 10%;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.dogpage .happyicon{
+	color: #6C6049;
+	margin-right: -40%;
+	font-size: 20px;
+}
+
+.dogpage .agenumber{
+	font-size: 14px;
+	margin-top: 7%;
+	position: absolute;
+	color:  #6C6049;
+	font-family: 'Lato', sans-serif;
+}
+.dogpage .needstextblock{
+	font-size: 14px;
+	margin-top: 20%;
+	text-align: left;
+	margin-left: 0%;
+	height: 60px;
+	width: 70%;
+	
+	overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+	font-family: 'Lato', sans-serif;
+}
+.dogpage .needs{
+	margin-top: 20%;
+	float: left;
+	margin-left: -10% !important;
+}
+.dogpage .downcirclebox{
+	width: 30px;
+	height: 30px;
+	background-color: #6C6049;
+	position: absolute;
+	margin-left: 85%;
+	margin-top: 10%;
+	border-radius: 50px;
+}
+.dogpage .greenicon{
+	margin-top: 16%;
+	position: absolute;
+	margin-left: -20%;
+	font-size: 21px;
+	color: #68B4A6;
+}
+
+
+
+/* POPUPS */
+
+.forfidopopup .popup{
+	background-color: #68B4A6 !important;
+	border-radius: 10px;
+}
+
+.forfidopopup .popup-head{
+	border: none;
+}
+
+.forfidopopup .popup-body{
+	text-align: left;
+	font-family: 'Lato', sans-serif;
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	margin-left: 2% !important;
+}
+
+.forfidopopup .popup-title{
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	font-size: 21px;
+}
+
+.forfidopopup .button{
+	background-color: #6C6049;
+	color: #68B4A6;
+	font-family: 'Fredoka One', cursive;
+	border-radius: 5px;
+	white-space: nowrap;
+	width: 100%;
+	margin-top: 5%;
+}
+
+.forfidopopup .button:active{
+	background-color:  #6C6049;
+}
+
+.forfidopopup .activated{
+	background-color: #68B4A6 !important;
+	color: #6C6049 !important;
+	border: 2px solid #6C6049 !important;
+}
+
+.forfidopopup .popup-sub-title{
+	font-family: 'Lato', sans-serif;
+	color: #fff;
+	font-size: 14px;
+	margin-top: 5%;
+}
+.forfidopopup input{
+	padding-left: 5%;
+	border-radius: 5px;
+	color: #6C6049 !important;
+}
+
+.forfidopopup .popup-buttons{
+	display: block
+}
+
+
+/* DOG SWIPE PAGE */
+
+.dogswipe{
+	background-color: #ecf0f1;
+}
+
+.dogswipe td-card{
+	height: 70vh !important;
+	width: 90vw !important;
+	margin-top: -32%;
+	border-radius: 10px;
+	margin-left: -5% !important;
+}
+
+.dogswipe td-card img{
+	height: 80vh !important;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 10px;
+}
+
+.dogswipe .clearbar{
+	background-color: #ecf0f1;
+	border: none !important;
+	background-image: none !important;
+}
+.dogswipe .clearbar .h1{
+	font-family: 'Fredoka One', cursive;
+	color: #68B4A6;
+}
+
+.dogswipe button{
+	color: #6C6049;
+}
+.dogswipe .infotext{
+	margin-top: -32%;
+	margin-left: 7%;
+}
+.dogswipe .infotext h1{
+	font-family: 'Fredoka One', cursive;
+	font-size: 45px;
+	color: #68B4A6;
+	text-shadow: 1px 1px 2px #6C6049;
+}
+.dogswipe .infotext p{
+	font-family: 'Lato', sans-serif;
+	font-size: 21px;
+	color: #fff;
+	text-shadow: 1px 1px 3px black;
+}
+
+.dogswipe .no-text{
+	font-size: 81px;
+	color: #e74c3c;
+}
+
+.dogswipe .yes-text{
+	font-size: 81px;
+	color: #68B4A6;
+}
+.dogswipe .golow{
+	margin-top: 92.5vh;
+	font-size: 26px;
+}
+.dogswipe .ccirc{
+	color: #68B4A6;
+}
+.dogswipe .rcirc{
+	color: #6C6049;
+}
+.dogswipe .xcirc{
+	color: #e74c3c;
+}
+.dogswipe .stars{
+	margin-top: -28%;
+	width: 40%;
+	margin-left: 50%;
+	font-size: 22px;
+	position: absolute;
+	color: #68B4A6;
+	text-shadow: 1px 1px 3px #6C6049;
+}
+
+.dogswipe .ion-arrow-left-c{
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 2%;
+}
+
+.zoomIn.ng-leave,
+.zoomIn > .ng-leave {
+  animation-name: zoomOut;
+}
+
+
+/*login page*/
+
+.signin .forfido{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right:0;
+	top:10vh;
+	text-align: center;
+	color: #68B4A6;
+	width: 80%;	
+}
+
+.signin .username{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	text-align: center;
+	width: 80%;
+	height: 50px;
+	top:30vh;
+	border:none;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+}
+
+.signin .password{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	text-align: center;
+	width: 80%;
+	height: 50px;
+	top:39vh;
+	border:none;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+}
+
+.signin .signinbtn{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right:0;
+	top:48vh;
+	width: 80%;
+	height: 50px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #68B4A6;
+	border: none;
+	border-radius: 10px;
+	font-size: 25px;
+	color: white;
+}
+
+.signin .facebookbtn{
+	position: absolute;
+	left: 10%;
+	top:56.5vh;
+	width: 39%;
+	height: 50px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #6C6049;
+	border: none;
+	border-radius: 10px;
+	font-size: 12px;
+	color: white;
+}
+
+.signin .registerbtn{
+	position: absolute;
+	left: 51%;
+	top:56.5vh;
+	width: 39%;
+	height: 50px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #6C6049;
+	border: none;
+	border-radius: 10px;
+	font-size: 12px;
+	color: white;
+}
+
+.signin .dog{
+	position: absolute;
+	right:0;
+	top:68vh;
+	width:73%;
+	object-fit: cover;
+	object-position: top;
+}
+
+/*End login page*/
+
+
+/*Register Page*/
+
+.register .forfido{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right:0;
+	top:10vh;
+	text-align: center;
+	color: #68B4A6;
+	width: 80%;	
+}
+
+.register .registerTxt{
+	text-align: center;
+	font-family: 'Fredoka One', cursive;
+	top: 0vh;
+	color: #6C6049;
+	font-size: 20px;
+}
+
+.register .email{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	text-align: center;
+	width: 80%;
+	height: 50px;
+	top:38vh;
+	border:none;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+}
+
+.register .regpassword{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	text-align: center;
+	width: 80%;
+	height: 50px;
+	top:48vh;
+	border:none;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+}
+
+.register .terms{
+	position: absolute;
+	top: 61vh;
+	width:100%;
+}
+
+.register .termsTxt{
+	position: absolute;
+	left: 35%;
+	top:0;
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	text-decoration: underline;
+}
+
+.register .checkbox{
+	left:30%;
+}
+
+.register .registerbtn{
+	position: absolute;
+	left: 10%;
+	top:70vh;
+	width: 80%;
+	height: 50px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #68B4A6;
+	border: none;
+	border-radius: 10px;
+	font-size: 12px;
+	color: white;
+	font-size: 15px;
+}
+
+.register .cancelbtn{
+	position: absolute;
+	left: 10%;
+	top:79vh;
+	width: 80%;
+	height: 50px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #6C6049;
+	border: none;
+	border-radius: 10px;
+	font-size: 12px;
+	color: white;
+	font-size: 15px;
+}
+
+/*End Register Page */
+
+
+/* More info page */
+
+.moreInfo input{
+	padding-left: 5%;
+	width: 80%;
+	height: 50px;
+	top:15vh;
+	border:none;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+	margin-top: 5%;
+}
+
+.moreInfo input:first-child{
+	margin-top: 20%;
+}
+
+.moreInfo .circle{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	text-align: center;
+	top: 48vh;
+	background-color: #222222;
+	border-radius: 50%;
+	border:none;
+	width: 150px;
+	height: 150px;
+	opacity: 0.9;
+}
+
+.moreInfo .ion-android-camera{
+	font-size: 100px;
+	margin-top: 3.5vh !important;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	color:#F1F2F2;	
+}
+
+.moreInfo .registerbtn{
+	position: absolute;
+	left: 10%;
+	top:75vh;
+	width: 80%;
+	height: 50px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #68B4A6;
+	border: none;
+	border-radius: 10px;
+	font-size: 12px;
+	color: white;
+	font-size: 15px;
+}
+.moreInfo h2{
+	margin-top: -11%;
+	font-family: 'Fredoka One', cursive;
+	color: #68B4A6;
+	text-transform: uppercase;
+	font-size: 16px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+
+}
+
+/* Dogs list Page */
+
+.doglist{
+	background-color: #ecf0f1;
+}
+
+.doglist .dogcards{
+	width: 90%;
+	height: 20vh;
+	background-color: #fff;
+	display: block;
+	box-shadow: 0px 0px 5px #8e8e8e;
+	margin-top: 5%;
+}
+
+.doglist h1{
+	margin-top: 20%;
+	font-family: 'Fredoka One', cursive;
+	color: #68B4A6;
+	text-transform: uppercase;
+	font-size: 21px;
+}
+
+.doglist .facebookprofile{
+	width: 40px;
+	height: 40px;
+	margin-top: -15%;
+	border-radius: 50px;
+	margin-left: -45%;
+	position: absolute;
+
+  	filter: grayscale(100%);
+}
+
+.doglist .dogcards img{
+	width: 100px;
+	height: 100px;
+	margin-top: 5%;
+	float: right;
+	margin-right: 5%;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: center;
+	overflow: hidden;
+}
+
+.doglist .dogcards h1{
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 4%;
+	font-size: 24px;
+} 
+
+.doglist .dogcards h2{
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #A7A9AC;
+
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 13%;
+	font-size: 16px;
+} 
+
+.doglist .dogcards p{
+	
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	color: #A7A9AC;
+
+	position: absolute;
+	text-align: left;
+	width: 50%;
+	margin-left: 5%;
+	margin-top: 20%;
+	font-size: 14px;
+} 
+
+.doglist .adddogbtn{
+	background-color: #6C6049;
+	font-family: 'Fredoka One', cursive;
+	color: #fff;
+	text-transform: uppercase;
+	width:60%;
+	left:20%;
+	border-radius:30px;
+	border: none;
+	padding: 3%;
+	margin-top: 13vh;
+	z-index: 9000;
+}
+.doglist .adddogbtn .roundicon{
+	margin-right: 2%;
+	font-size: 16px;
+}
+
+.doglist .fileinput button{
+	width: 100%;
+	position: absolute;
+}
+
+.doglist .logoutIcon{
+	position: absolute;
+	top: -7vh;
+	right:3vh;
+	font-size: 21px;
+	color: #6C6049;
+}
+
+.doglist .emptytext{
+	margin-top: 20vh;
+	color: green;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #6C6049;
+}
+
+.doglist .doglistcontent{
+	margin-top: 25vh;
+}
+
+#upload-file-container {
+   width: 70vw;
+   height: 10vh;
+   position: absolute;
+   border: dashed 1px #fff;
+   overflow: hidden;
+
+   margin-left: auto;
+   margin-right: auto;
+   left: 0;
+   right: 0;
+   margin-top: -15vh;
+   background-color: #68B4A6;
+}
+
+#upload-file-container input[type="file"]
+{
+   position: absolute;
+   color: blue;
+   width: 80vw;
+}
+
+#upload-file-container p{
+	text-align: center;
+	color: #fff;
+	font-family: 'Fredoka One', cursive;
+	text-transform: uppercase;
+	margin-top: 8.5%;
+}
+
+.upload{
+	width: 70%;
+	margin-top: -14%;
+	height: 5vh;
+	border: none;
+	background-color: #6C6049;
+	color: #fff;
+	font-family: 'Fredoka One', cursive;
+	border-radius: 10px;
+
+	position: absolute;
+	margin-right: auto;
+	margin-left: auto;
+	left: 0;
+	right: 0;
+}
+/*
+input[type="file"]{
+   border: none;
+   background-image: url("https://maxbuttons.com/wp-content/themes/maxbuttons-theme/images/icons/quickadd.png");
+   background-size: 100% 100%;
+   text-indent: -9999px; 
+   width: 40vw;
+   height: 40vh;
+   max-height: none !important;
+   max-width: none !important;
+   background-color: transparent;
+   margin-top: -20%;
+}*/
+
+/* Add Dog */
+
+.adddogmodal{
+	background-color: #ecf0f1;
+}
+.adddogmodal ion-header-bar{
+	background-color: #ecf0f1;
+}
+
+.adddogmodal button::before{
+	font-size: 16px !important;
+	color: #6C6049;
+}
+
+.adddogmodal ion-header-bar .title{
+	font-size: 16px !important;
+	color: #6C6049;
+	font-family: 'Fredoka One', cursive;
+}
+
+.adddogmodal img{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+	margin-top: -35%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.adddogmodal input:first-child{
+	margin-top: 40%;
+	border-radius: 10px;
+	border: none;
+	padding-left: 5%;
+	width: 70%;
+	height: 6vh;
+}
+
+
+.adddogmodal input{
+	margin-top: 5%;
+	border-radius: 10px;
+	border: none;
+	padding-left: 5%;
+	width: 70%;
+	height: 6vh;
+}
+.adddogmodal textarea{
+	margin-top: 5%;
+	border-radius: 10px;
+	border: none;
+	width: 70%;
+	height: 10vh;
+	padding: 2%;
+	padding-left: 7%;
+	padding-right: 7%;
+	resize: none;
+}
+
+.adddogmodal .bakcbutton{
+	width: 70%;
+	margin-top: 5%;
+	height: 5vh;
+	margin-bottom: 10%;
+	border: none;
+	background-color: #6C6049;
+	color: #fff;
+	font-family: 'Fredoka One', cursive;
+	border-radius: 10px;
+}
+
+
+/* More info page */
+
+.moreInfo input{
+	padding-left: 5%;
+	width: 80%;
+	height: 50px;
+	top:15vh;
+	border:none;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+	margin-top: 5%;
+}
+
+.moreInfo input:first-child{
+	margin-top: 20%;
+}
+
+.moreInfo .circle{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	text-align: center;
+	top: 48vh;
+	background-color: #222222;
+	border-radius: 50%;
+	border:none;
+	width: 150px;
+	height: 150px;
+	opacity: 0.9;
+}
+
+.moreInfo .ion-android-camera{
+	font-size: 100px;
+	margin-top: 3.5vh !important;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	color:#F1F2F2;	
+}
+
+.moreInfo .registerbtn{
+	position: absolute;
+	left: 10%;
+	top:75vh;
+	width: 80%;
+	height: 50px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #68B4A6;
+	border: none;
+	border-radius: 10px;
+	font-size: 12px;
+	color: white;
+	font-size: 15px;
+}
+
+/* Walk Page */
+
+.walker{
+	background-color: #ecf0f1 !important;
+}
+
+.view-container{
+	background-color: #ecf0f1 !important;
+}
+
+.walk .timerBG{
+	position: absolute;
+	background-color: #68B4A6;
+	height: 80px;
+	width:80%;
+	top: 5vh;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	border-radius:10px;
+}
+
+.walk .currentTime{
+	font-family: 'Fredoka One', cursive;
+	font-size: 50px;
+	color: black;
+	line-height: 150%;
+}
+
+.walk .walkData{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	width: 80%;
+	height:44vh;
+	top: 20vh;
+	background-color:#F1F2F2;
+	border-radius: 10px;
+	border: 2px solid #68B4A6;
+}
+
+.walk .dogInfo{
+	margin-top:-28vh;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.walk .dog{
+	margin-top:8vh;
+	margin-left: 25%;
+	border-radius: 360%;
+	border: 3px solid #ecf0f1;
+    box-shadow: 0 0 0 1px;
+	width:50%;
+	height: 50%;
+	object-fit: cover;
+	object-position: top
+}
+
+.walk .Distance{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	text-align: center;
+	top: 35vh;
+	font-family: 'Fredoka One', cursive;
+	color: #424142;
+	font-size: 18px;
+}
+
+.walk .walkBtn{
+	position: absolute;
+	text-align: center;
+	width: 38%;
+	left: 10%;
+	height: 80px;
+	top: 67vh;
+	border: none;
+	border-radius: 10px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #A7A9AC;
+	color: white;
+	font-size: 18px;
+}
+
+.walk .restartBtn{
+	position: absolute;
+	right:10%;
+	width: 38%;
+	height: 80px;
+	top: 67vh;
+	border: none;
+	border-radius: 10px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #68B4A6;
+	color: white;
+	font-size: 18px;
+}
+
+.walk .doneBtn{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right: 0;
+	text-align: center;
+	width: 80%;
+	height: 80px;
+	top: 80vh;
+	border: none;
+	border-radius: 10px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #6C6049;
+	color: white;
+	font-size: 25px;
+
+}
+
+.dogswipe ion-header-bar{
+	display: none !important;
+}
+
+#ng-camera-action{
+	display:none;
+}
+
+.moreInfo video{
+	display: none;
+}
+
+.myimage{
+	border-radius: 50%;
+	object-fit: cover;
+	width: 30vw;
+	height: 30vh;
+}
+
+/* Thanks Page */
+.thanks .thnksBtn{
+	position: absolute;
+	margin-right: auto;
+	margin-left: auto;
+	left: 0;
+	right: 0;
+	top:70vh;
+	width: 80%;
+	height: 50px;
+	font-family: 'Fredoka One', cursive;
+	background-color: #68B4A6;
+	border: none;
+	border-radius: 10px;
+	font-size: 12px;
+	color: white;
+	font-size: 15px;
+}
+
+
+/* Walker Tab */
+
+.walker .cardPic{
+	width: 100px;
+	height: 100px;
+	margin-top: 5%;
+	float: right;
+	margin-right: 5%;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: center;
+	overflow: hidden;
+}
+
+.walker h1{
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 4%;
+	font-size: 24px;
+} 
+
+.walker h2{
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #A7A9AC;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 16%;
+	font-size: 16px;
+} 
+
+.walker h3{
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #A7A9AC;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 25%;
+	font-size: 16px;
+}
+
+.walker h4{
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #A7A9AC;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 34%;
+	font-size: 16px;
+}  
+
+.walker .list{
+	top:27vh;
+	width:90% !important;
+}
+
+.walker .item1{
+	font-family: 'Fredoka One', cursive;
+	color: #68B4A6;
+	background-color: #ecf0f1;
+	border:none;
+	font-size: 25px;
+	margin-bottom: 15px;
+	width: 90% !important;
+}
+
+.walker .item2{
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	background-color: #ecf0f1;
+	border:none;
+	font-size: 25px;
+	margin-top: 35px;
+	width: 90% !important;
+}
+
+.walker .card1{
+	width: 90vw !important;
+	height: 22vh;
+	background-color: #fff;
+	display: block;
+	box-shadow: 0px 0px 5px #8e8e8e;
+	margin-top: 5%;
+}
+
+.walker .card2{
+	width: 90vw !important;
+	height: 22vh;
+	background-color: #fff;
+	display: block;
+	box-shadow: 0px 0px 5px #8e8e8e;
+	margin-top: 5%;
+}
+
+.walker .findDog{
+	position:absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	top:12vh;
+	width:60%;
+	height:50px;
+	border-radius:30px;
+	border:none;
+	font-family: 'Fredoka One', cursive;
+	background-color: #6C6049;
+	color: #FFF;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+/* Rating Page */
+
+.rating .finish{
+	margin-top:80vh;
+	width:80%;
+	height:50px;
+	border-radius: 10px;
+	border:none;
+	font-family: 'Fredoka One', cursive;
+	background-color: #68B4A6;
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+/* Donate Page */
+
+.donate .pos{
+	margin-top: 30vh;
+}
+
+.donate button{
+	width: 80%;
+	height: 50px;
+	border:none;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+	margin-top: 5%;
+	font-family: 'Fredoka One', cursive;
+	background-color: #68B4A6;
+	color: white;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.donate button:first-child{
+	margin-top: 40vh;
+}
+
+
+.profile{
+	background-color: #ecf0f1;
+	text-align: center;
+}
+
+.profile .proflepics{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-top: 10vh;
+	border: 4px solid #68B4A6;
+}
+
+.profile h1{
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.profile .item{
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+	color: #6C6049;
+	font-size: 14px;
+	margin-top: 10%;
+	text-align: left;
+	height: 10vh;
+	line-height: 35px;
+	background-color: transparent;
+	border: none;
+}
+
+.profile .item{
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+	color: #6C6049;
+	font-size: 14px;
+	margin-top: 10%;
+	text-align: left;
+	height: 10vh;
+	line-height: 35px;
+	background-color: transparent;
+	border: none;
+}
+
+.profile .item input{
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+	background-color: transparent;
+	color: #6C6049;
+	width: 50vw;
+}
+
+.profile .item .icon{
+	font-size: 21px;
+	z-index: 9000;
+}
+
+.profile .item .ion-edit{
+	color: #68B4A6;
+}
+
+.profile .item .ion-checkmark-round{
+	color: #68B4A6;
+}
+
+
+
+
+
+.profile button{
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+	color: #fff;
+	font-size: 14px;
+	margin-top: 30%;
+	height: 7vh;
+	width: 30vh;
+	background-color: #6C6049;
+	border: none;
+	border-radius: 10px;
+}
+
+
+.profile .specialpadding{
+	padding-right: 10%;
+	padding-left: 10%;
+}
+
+.profile .bakcicon{
+	position: absolute;
+	margin-left: -40vw;
+	margin-top: 8vw;
+	font-size: 24px;
+	color: #68B4A6;
+}

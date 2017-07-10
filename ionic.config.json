@@ -1,0 +1,8 @@
+{
+  "name": "forfido",
+  "app_id": "e4cb0fed",
+  "type": "ionic1",
+  "watchPatterns": [
+    "scss/**/*"
+  ]
+}

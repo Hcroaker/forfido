@@ -1,0 +1,23 @@
+<ioni-view class ="register">
+  <ion-content>
+
+  	<img src="img/logo.png" class="forfido">
+
+    	<label class="item item-input email">
+      	<input type="email" placeholder="Email" ng-model="email">
+    	</label>
+
+    	<label class="item item-input regpassword">
+      	<input type="password" placeholder="Password" ng-model="password">
+    	</label>
+
+    	<div class="terms">
+  	  		<input  class = "checkbox" type="checkbox" name="terms" value="Agree">
+  	  		<p class="termsTxt">terms and conditions</p>
+    	</div>
+
+    	<button class = "registerbtn" ng-click = "register(email, password)">Register</button>
+      <button class = "cancelbtn" ng-click = "cancel()">Cancel</button>
+  </ion-content>
+
+</ioni-view>

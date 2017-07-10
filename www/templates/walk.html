@@ -1,0 +1,27 @@
+<ion-view class = "walk">
+	<ion-content>
+
+	<div class = "animated bounceIn walkData">
+		<div class = "tripmeter" id="tripmeter">
+		  <!-- <p>
+		    Starting Location (lat, lon):<br/>
+		    <span id="startLat">???</span>°, <span id="startLon">???</span>°
+		  </p>
+		  <p>
+		    Current Location (lat, lon):<br/>
+		    <span id="currentLat">???</span>°, <span id="currentLon">???</span>°
+		  </p> -->
+		</div>
+		<img src = "img/load.gif" ng-src="{{dogimage}}" class = dog>
+		<p class = "dogInfo">Walking: {{dogname}}</p>
+	</div>
+	<div class="animated bounceIn timerBG">
+		<timer interval="1000" class = "currentTime">{{hours}} :{{minutes}} :{{seconds}}</timer>
+	</div>
+	<button class = "walkBtn" ng-click="startWalk()">{{walkstate}}</button>
+	<button class = "restartBtn" ng-click="restartWalk()">Restart Walk</button>
+	<button class = "doneBtn" ng-click="finishWalk()">Finish Walk</button>
+
+	
+	</ion-content>
+</ion-view>
