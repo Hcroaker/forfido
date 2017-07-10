@@ -1319,3 +1319,31 @@ input[type="file"]{
 	font-size: 24px;
 	color: #68B4A6;
 }
+
+.specialnavbar{
+	background: #6C6049;
+}
+
+.specialnavbar .title{
+	color: #68B4A6 !important;
+}
+.specivalnavlist ion-content{
+	background: #68B4A6 !important;
+}
+.specivalnavlist .item{
+	background: #68B4A6 !important;
+	border: none;
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	font-weight: 500;
+	font-size: 21px;
+	margin-top: 2vh;
+	padding-left: 5vw;
+}
+
+
+
+
+.messages{
+	background-color: #ecf0f1 !important;
+}

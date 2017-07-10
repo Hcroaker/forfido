@@ -259,6 +259,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase', 'ionic.co
     //   controller: 'ownerCtrl'
     // })
 
+    .state('messages', {
+        url: '/messages',
+        views: {
+            'walker-tab': {
+                templateUrl: 'templates/messages.html',
+                controller: 'messagesCtrl'
+            }
+        }
+    })
+
     .state('rating', {
         url: '/rating',
         templateUrl: 'templates/rating.html',

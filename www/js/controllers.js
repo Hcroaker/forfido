@@ -55,20 +55,6 @@ angular.module('starter.controllers', [])
     };
 
 
-    $scope.toggleLeft = function() {
-        $ionicSideMenuDelegate.toggleLeft();
-        // var thepopup = $ionicPopup.alert({
-        //   title: 'This is a sidemenu',
-        //   template: 'This will be a nice sidemenu, but for now it will log you out.',
-        //   cssClass: 'forfidopopup'
-        // });
-
-        // thepopup.then(function(res) {
-        //   $state.go('signin')
-        // });
-
-    };
-
     $scope.cardDestroyed = function(index) {
         $scope.cards.active.splice(index, 1);
     };
@@ -506,7 +492,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('DogListCtrl', function($scope, $stateParams, $ionicModal, $firebaseArray, store, $firebaseObject, $state, $ionicPopup, $ionicLoading, $timeout) {
+.controller('DogListCtrl', function($scope, $stateParams, $ionicModal, $firebaseArray, store, $firebaseObject, $state, $ionicPopup, $ionicLoading, $timeout, $ionicSideMenuDelegate) {
     $scope.downloaddone = false;
 
     var user = firebase.auth().currentUser;
@@ -715,6 +701,11 @@ angular.module('starter.controllers', [])
     }
 
 
+    $scope.toggleLeft = function() {
+        $ionicSideMenuDelegate.toggleLeft();
+        console.log("Left Toggle")
+    };
+
 })
 
 
@@ -776,6 +767,7 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('messagesCtrl', function($scope, $stateParams) {})
 
 .controller('ownerCtrl', function($scope, $stateParams) {})
 
