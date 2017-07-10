@@ -1354,3 +1354,78 @@ input[type="file"]{
 .messages{
 	background-color: #ecf0f1 !important;
 }
+<<<<<<< HEAD
+=======
+
+.messages .tabsheader{
+	background-image: none;
+}
+
+.messages .longcard:first-child{
+	margin-top: 6vh;
+	position: absolute;
+}
+
+.messages .longcard{
+	display: block;
+	width: 100%;
+	height: 15vh;
+	overflow: hidden;
+
+	border-bottom: 1px solid #BDC3C7;
+}
+
+.messages .backimage{
+	position: absolute;
+	margin-left: -1.6%;
+	width: 30vw;
+	height: 15vh;
+}
+
+.imgoverlay{
+	position: absolute;
+	margin-left: -1.55%;
+	width: 28vw;
+	height: 15vh;
+	background-color: rgba(152, 149, 166, 0.5);
+	z-index: 9000;
+}
+
+.messages .backimage img{
+	width: 30vw;
+	height: 15vh;
+	object-fit: contain;
+	margin-left: -1.6%;
+}
+
+.messages .name{
+	margin-left: 30vw;
+	font-size: 21px;
+	padding-top: 3vh;
+	color: #6C6049;
+
+	font-family: 'Lato', sans-serif;
+	font-weight: 800;
+	font-weight: bold;
+}
+.messages .lastmessage{
+	margin-left: 30.5vw;
+	font-size: 12px;
+	margin-top: 2vh;
+	white-space: nowrap;
+
+	color: #6C6049;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+.messages .date{
+	margin-left: 90vw;
+	font-size: 16px;
+	margin-top: -8vh;
+	position: absolute;
+
+	color: #6C6049;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+>>>>>>> a1541bfa9b67d695aa8d356e4b72ec831bad7f9c
