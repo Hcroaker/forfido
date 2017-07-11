@@ -191,6 +191,7 @@ angular.module('starter.controllers', [])
             if (user) {
                 $state.go('tabs')
                 var epuser = store.set('epuser', user);
+                console.log("ep user")
             } else {
                 console.log("No user")
             }
@@ -352,10 +353,6 @@ angular.module('starter.controllers', [])
                 address: address,
                 mobile: mobile,
                 picture: 'none',
-                walkingDogs: [{
-                    owner: "mobileNum or name..",
-                    Dogname: "John"
-                }]
             });
 
             // firebase.auth().onAuthStateChanged(function(user) {
@@ -394,7 +391,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('walkCtrl', function($scope, $stateParams, $state, store) {
+.controller('walkCtrl', function($scope, $stateParams, $state, store, $rootScope) {
 
     $scope.dogname = store.get("viewingdog")
     $scope.dogimage = store.get("viewingdogimg")
@@ -451,9 +448,8 @@ angular.module('starter.controllers', [])
     var speed = 5.5;
 
     $scope.$on('$stateChangeSuccess', function () {
-      $scope.restartWalk();
+      $scope.startTimer();
     });
-
 
     $scope.walkstate = "Pause Walk";
 
@@ -515,13 +511,11 @@ angular.module('starter.controllers', [])
           distance = speed*(data.minutes/60) + speed*(data.seconds/3600);
           console.log("d= " + distance);
         }
-
-        store.set("finalD", distance);
     });
 
     $scope.finishWalk = function() {
         $scope.stopTimer();
-        $state.go('rating');
+        $state.go('rating', {finalDist: 'distance'});
     }
 
 
@@ -553,7 +547,7 @@ angular.module('starter.controllers', [])
 
     // Triggered in the login modal to close it
     $scope.closethedogmodal = function() {
-        $scope.dogmodal.hide();
+        $scope.modal.hide();
     };
 
     // Open the login modal
@@ -570,13 +564,16 @@ angular.module('starter.controllers', [])
             store.set("mywalkcount", $scope.addone)
         });
 
+
+
         if (Name && Breed && Type && Temperment && Special && Fitness && Age) {
+
             $scope.cango = true;
 
             if ($scope.me) {
                 console.log("Done Uploading");
-                var mywlakcount = store.get("mywalkcount")
-                ref.child(mywlakcount).set({
+                var mywalkcount = store.get("mywalkcount")
+                ref.child(mywalkcount).set({
                     photo: $scope.me,
                     name: Name,
                     breed: Breed,
@@ -807,7 +804,12 @@ angular.module('starter.controllers', [])
 
 .controller('ownerCtrl', function($scope, $stateParams) {})
 
-.controller('ratingCtrl', function($scope, $stateParams, $ionicPopup, $state, store, $firebaseObject, $timeout) {
+.controller('ratingCtrl', function($scope, $stateParams, $ionicPopup, $state, store, $firebaseObject, $timeout, $rootScope) {
+
+    console.log("arrived at rating")
+
+    $scope.finalDistance = $state.params.finalDist;
+    console.log("the final d = " + $scope.finalDistance);
 
     $timeout(function() {
         console.log("rating");
@@ -816,9 +818,6 @@ angular.module('starter.controllers', [])
     $scope.dogname = store.get("viewingdog")
     $scope.dogimage = store.get("viewingdogimg")
     var dogownerid = store.get("dogownerid")
-
-    $scope.finalDistance = store.get("finalD");
-    console.log("final D = " + $scope.finalDistance);
 
     console.log(dogownerid);
 
@@ -834,6 +833,8 @@ angular.module('starter.controllers', [])
 
     $scope.finishRate = function() {
         $scope.data = {}
+
+        store.set("finalD", 0);
 
         var myPopup = $ionicPopup.show({
             template: '<input type = "number" ng-model = "data.model" placeholder = "Input amount here">',
