@@ -915,8 +915,8 @@ input[type="file"]{
 .walk .timerBG{
 	position: absolute;
 	background-color: #68B4A6;
-	height: 80px;
-	width:80%;
+	height: 12vh;
+	width:45vh;
 	top: 5vh;
 	overflow: hidden;
 	margin-left: auto;
@@ -940,7 +940,7 @@ input[type="file"]{
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	width: 80%;
+	width: 45vh;
 	height:44vh;
 	top: 20vh;
 	background-color:#F1F2F2;
@@ -949,22 +949,25 @@ input[type="file"]{
 }
 
 .walk .dogInfo{
-	margin-top:-28vh;
+	font-family: 'Fredoka One', cursive;
+	color: #68B4A6;
+	margin-top:-29vh;
 	margin-left: auto;
 	margin-right: auto;
+	font-size: 20px;
 	left: 0;
 	right: 0;
 	text-align: center;
 }
 
 .walk .dog{
-	margin-top:8vh;
-	margin-left: 25%;
+	margin-top:9vh;
+	margin-left: 11vh;
 	border-radius: 360%;
 	border: 3px solid #ecf0f1;
-    box-shadow: 0 0 0 1px;
-	width:50%;
-	height: 50%;
+  box-shadow: 0 0 0 1px;
+	width:23vh;
+	height: 23vh;
 	object-fit: cover;
 	object-position: top
 }
@@ -985,9 +988,9 @@ input[type="file"]{
 .walk .walkBtn{
 	position: absolute;
 	text-align: center;
-	width: 38%;
-	left: 10%;
-	height: 80px;
+	width: 21vh;
+	left: 7vh;
+	height: 12vh;
 	top: 67vh;
 	border: none;
 	border-radius: 10px;
@@ -999,9 +1002,9 @@ input[type="file"]{
 
 .walk .restartBtn{
 	position: absolute;
-	right:10%;
-	width: 38%;
-	height: 80px;
+	width: 21vh;
+	right: 7vh;
+	height: 12vh;
 	top: 67vh;
 	border: none;
 	border-radius: 10px;
@@ -1018,8 +1021,8 @@ input[type="file"]{
 	left:0;
 	right: 0;
 	text-align: center;
-	width: 80%;
-	height: 80px;
+	width: 45vh;
+	height: 12vh;
 	top: 80vh;
 	border: none;
 	border-radius: 10px;
@@ -1028,6 +1031,18 @@ input[type="file"]{
 	color: white;
 	font-size: 25px;
 
+}
+
+.walk a{
+	position: absolute;
+	margin-top:54vh;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right:0;
+	width:25vh;
+	height: 7vh;
+	text-align: center;
 }
 
 .dogswipe ion-header-bar{
@@ -1183,7 +1198,6 @@ input[type="file"]{
 	text-transform: uppercase;
 }
 /* Rating Page */
-
 .ratingTitle{
 	margin-top:20px;
 	font-family: 'Fredoka One', cursive;
@@ -1191,10 +1205,88 @@ input[type="file"]{
 	color: #68B4A6;
 }
 
+.rating .showsdistmsg{
+	position: absolute;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top:7.5vh;
+	font-family: 'Fredoka One', cursive;
+}
+
+.rating .distance{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	top:7.5vh;
+	font-family: 'Fredoka One', cursive;
+}
+
+.rating .toggle{
+	position: absolute;
+	right: 6vh;
+	top:7vh;
+}
+
+.rating .ratings{
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	margin-top: 10vh;
+	width: 45vh;
+}
+
+.rating .item.range {
+	margin-top: 3vh;
+	border: none;
+	color: #FFF;
+	background-color: #67809F;
+	border-radius:10px;
+	font-size: 25px;
+	height: 10vh;
+}
+
+.rating .overall{
+	color: #3498DB;
+	margin-top: 4vh;
+	font-family: 'Fredoka One', cursive;
+	text-align: left;
+	font-size: 18px;
+}
+
+.rating .temperement{
+	margin-top: 4vh;
+	font-family: 'Fredoka One', cursive;
+	text-align: left;
+	color: #4B77BE;
+	font-size: 18px;
+}
+
+.rating .owner{
+	margin-top: 4vh;
+	font-family: 'Fredoka One', cursive;
+	text-align: left;
+	color: #68B4A6;
+	font-size: 18px;
+}
+
 .rating .finish{
-	margin-top:80vh;
-	width:80%;
-	height:50px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	right: 0;
+	left: 0;
+	top:80vh;
+	width:45vh;
+	height:10vh;
 	border-radius: 10px;
 	border:none;
 	font-family: 'Fredoka One', cursive;
@@ -1203,6 +1295,7 @@ input[type="file"]{
 	font-size: 20px;
 	text-transform: uppercase;
 }
+
 
 /* Donate Page */
 
@@ -1354,8 +1447,6 @@ input[type="file"]{
 .messages{
 	background-color: #ecf0f1 !important;
 }
-<<<<<<< HEAD
-=======
 
 .messages .tabsheader{
 	background-image: none;
@@ -1428,4 +1519,3 @@ input[type="file"]{
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
 }
->>>>>>> a1541bfa9b67d695aa8d356e4b72ec831bad7f9c

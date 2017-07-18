@@ -353,6 +353,7 @@ angular.module('starter.controllers', [])
                 address: address,
                 mobile: mobile,
                 picture: 'none',
+                rating: 3,
             });
 
             // firebase.auth().onAuthStateChanged(function(user) {
@@ -443,9 +444,7 @@ angular.module('starter.controllers', [])
     // Number.prototype.toRad = function() {
     //     return this * Math.PI / 180;
     // }
-
-    var distance = 0;
-    var speed = 5.5;
+    var speed = 5.0;
 
     $scope.$on('$stateChangeSuccess', function () {
       $scope.startTimer();
@@ -493,29 +492,32 @@ angular.module('starter.controllers', [])
         }
         if (data.minutes) {
           console.log("minutes");
-          distance = speed*(data.minutes/60);
-          console.log("d= " + distance);
-        }
-        if (data.hours && data.minutes && data.seconds) {
-          cosole.log("Hours minutes and seconds");
-          distance = speed*data.hours + speed*(data.minutes/60) + speed*(data.seconds/3600);
-          console.log("d= " + distance);
+          $scope.distance = speed*(data.minutes/60);
+          console.log("d= " + $scope.distance);
         }
         if(data.hours && data.minutes){
           cosole.log("Hours and minutes");
-          distance = speed*data.hours + speed*(data.minutes/60);
-          console.log("d= " + distance);
+          $scope.distance = speed*data.hours + speed*(data.minutes/60);
+          console.log("d= " + $scope.distance);
         }
-        if (data.minutes && data.seconds && !data.hours) {
+        if (data.minutes && data.seconds) {
           console.log("minutes and seconds");
-          distance = speed*(data.minutes/60) + speed*(data.seconds/3600);
-          console.log("d= " + distance);
+          $scope.distance = speed*(data.minutes/60) + speed*(data.seconds/3600);
+          console.log("d= " + $scope.distance);
         }
+        if (data.hours && data.minutes && data.seconds) {
+          cosole.log("Hours minutes and seconds");
+          $scope.distance = speed*data.hours + speed*(data.minutes/60) + speed*(data.seconds/3600);
+          console.log("d= " + $scope.distance);
+        }
+
+
     });
 
     $scope.finishWalk = function() {
         $scope.stopTimer();
-        $state.go('rating', {finalDist: 'distance'});
+        store.set('finalDistance', $scope.distance);
+        $state.go('rating');
     }
 
 
@@ -808,8 +810,16 @@ angular.module('starter.controllers', [])
 
     console.log("arrived at rating")
 
-    $scope.finalDistance = $state.params.finalDist;
-    console.log("the final d = " + $scope.finalDistance);
+    $scope.finalDist = store.get('finalDistance');
+
+    console.log("the final d = " + $scope.finalDist);
+
+    //The starting data of the rating sliders
+    $scope.overall = '3';
+    $scope.temper = '3';
+    $scope.owner = '3';
+
+    var timeoutId = null;
 
     $timeout(function() {
         console.log("rating");
@@ -831,10 +841,15 @@ angular.module('starter.controllers', [])
         console.log($scope.personname)
     });
 
-    $scope.finishRate = function() {
+    $scope.finishRate = function(overall, temper, owner) {
+
         $scope.data = {}
 
-        store.set("finalD", 0);
+        var finalRate = (overall + temper + owner)/3;
+        console.log(overall, temper, owner)
+        console.log(finalRate)
+
+        store.set("finalDistance", 0);
 
         var myPopup = $ionicPopup.show({
             template: '<input type = "number" ng-model = "data.model" placeholder = "Input amount here">',
@@ -851,6 +866,7 @@ angular.module('starter.controllers', [])
                         //don't allow the user to close unless he enters model...
                         e.preventDefault();
                     } else {
+                        $scope.finalDist = 0;
                         $state.go("donate");
                     }
 
@@ -860,6 +876,7 @@ angular.module('starter.controllers', [])
                 text: 'No Thanks',
                 type: 'button',
                 onTap: function(e) {
+                    $scope.finalDist = 0;
                     $state.go('tabs')
                 },
 

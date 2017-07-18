@@ -2,8 +2,38 @@
 	<ion-content>
 	<center>
 		<p class="ratingTitle">Rate: {{personname}}</p>
-		<p>{{finalDistance | number: 2}}</p>
-		<button class = "finish" ng-click="finishRate()">Submit and finish</button>
+		<label class="toggle">
+	   <input type="checkbox" ng-model="showdistance" class="showdistance">
+	   <div class="track">
+	     <div class="handle"></div>
+	   </div>
+	 	</label>
+		<p ng-if="!showdistance" class="showsdistmsg">Show distance walked</p>
+		<p ng-if="showdistance" class="distance">{{finalDist | number: 2}}</p>
+		<div class="ratings">
+			<!-- Overall rating -->
+			<p class="overall">Overall Rating: {{overall}}</p>
+			<div class="item range">
+			  <i class="ion-sad-outline"></i>
+			  <input type="range" name="overall" min="0" max="5" ng-model="overall">
+			  <i class="ion-happy"></i>
+			</div>
+			<!-- Temperment of dog -->
+			<p class="temperement">Termperement of dog: {{temper}}</p>
+			<div class="item range">
+			  <i class="ion-ios-paw-outline"></i>
+			  <input type="range" name="temperement" min="0" max="5" ng-model="temper">
+			  <i class="ion-ios-paw"></i>
+			</div>
+			<!-- Owner rating -->
+			<p class="owner">Experience with owner: {{owner}}</p>
+			<div class="item range">
+			  <i class="ion-thumbsdown"></i>
+			  <input type="range" name="overall" min="0" max="5" ng-model="owner">
+			  <i class="ion-thumbsup"></i>
+			</div>
+		</div>
+		<button class = "finish" ng-click="finishRate(overall, temper, owner)">Submit and finish</button>
 	</center>
 	</ion-content>
 </ion-view>
