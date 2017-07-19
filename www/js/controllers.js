@@ -806,18 +806,43 @@ angular.module('starter.controllers', [])
 
 .controller('ownerCtrl', function($scope, $stateParams) {})
 
-.controller('ratingCtrl', function($scope, $stateParams, $ionicPopup, $state, store, $firebaseObject, $timeout, $rootScope) {
+.controller('ratingCtrl', function($scope, $stateParams, $ionicPopup, $state, store, $firebaseObject, $timeout, $rootScope, $firebaseArray) {
+
+    var user = firebase.auth().currentUser;
+    var fbuser = store.get('user');
+    if (user) {
+        $scope.username = user.uid;
+        $scope.displayname = user.fname;
+        var ref = firebase.database().ref().child("Users").child(user.uid).child('Rating');
+    } else {
+        $scope.username = fbuser.id;
+        $scope.displayname = fbuser.name;
+        $scope.photo = "https://graph.facebook.com/" + fbuser.id + "/picture?type=large";
+        var ref = firebase.database().ref().child('Users').child(fbuser.id);
+        var dbRatingref = ref.child("Rating");
+
+        var dbRating = $firebaseObject(dbRatingref);
+
+        dbRating.$loaded(function() {
+            $scope.rating = dbRating.$value
+            console.log($scope.rating)
+        });
+    }
+
+
+
 
     console.log("arrived at rating")
+
 
     $scope.finalDist = store.get('finalDistance');
 
     console.log("the final d = " + $scope.finalDist);
 
     //The starting data of the rating sliders
-    $scope.overall = '3';
-    $scope.temper = '3';
-    $scope.owner = '3';
+    $scope.overall = 3;
+    $scope.temper = 3;
+    $scope.owner = 3;
 
     var timeoutId = null;
 
@@ -845,11 +870,21 @@ angular.module('starter.controllers', [])
 
         $scope.data = {}
 
-        var finalRate = (overall + temper + owner)/3;
-        console.log(overall, temper, owner)
+        //Average rating based on the 3 sliders
+        var finalRate = ((overall-'0') + (temper-'0') + (owner-'0'))/3;
+        finalRate = Math.round(finalRate * 100) / 100
         console.log(finalRate)
 
-        store.set("finalDistance", 0);
+        //Average rating based on the users current rating
+        var newRating = ($scope.rating+finalRate)/2
+
+        console.log("New rating = " + newRating)
+
+        objectToSave = newRating;
+
+        var ref = firebase.database().ref().child("Users").child(fbuser.id).child("Rating").set(objectToSave);
+
+
 
         var myPopup = $ionicPopup.show({
             template: '<input type = "number" ng-model = "data.model" placeholder = "Input amount here">',
