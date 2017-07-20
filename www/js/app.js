@@ -312,7 +312,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'firebase', 'ionic.co
     .state('history', {
         url: '/history',
         templateUrl: 'templates/history.html',
-        controller: 'histCtrl'
+        controller: 'historyCtrl'
     });
 
     // if none of the above states are matched, use this as the fallback

@@ -1,2 +1,31 @@
-<ion-view>
+<ion-view class="history">
+  <div class="bar bar-header tabsheader">
+      <button class="animated bounceIn button button-icon ion-arrow-return-left" ui-sref="tabs"></button>
+      <div class="h1 title">History</div>
+      <i class="animated bounceIn icon ion-plus-round" ng-click="addgoal()"></i>
+      <div class="h2 title">Current Distance displayed here</div>
+  </div>
+
+  <ion-content>
+
+    <center>
+    <div class="animated bounceIn list">
+        <div class="card1 item-text-wrap" ng-repeat = "dog in dogs">
+          <h1>Name: {{dog.name}}</h1>
+          <h2>Date: {{dog.date}}</h2>
+          <h3>Distance: {{dog.distance | number :2}} km</h2>
+          <h4>Time: {{dog.time | number :2}} hrs</h3>
+
+          <img class = "cardPic" src = "{{dog.pic}}" >
+        </div>
+
+        <!-- <div ng-show="!dogs.length" style="font-family: 'Fredoka One', cursive;
+  color: #A7A9AC; font-size: 10px;">
+          <img ui-sref="dogswipe" src = "https://upload.wikimedia.org/wikipedia/en/f/fd/Droopy_dog.png" style="width:100px;height: 100px; object-fit: contain;">
+          <p>You havent walked any dogs...</p>
+        </div> -->
+    </div>
+    </center>
+
+  </ion-content>
 </ion-view>

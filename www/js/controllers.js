@@ -105,6 +105,8 @@ angular.module('starter.controllers', [])
                         $scope.mydate = $filter('date')($scope.data.date, 'shortDate');
                         $scope.mytime = $filter('date')($scope.data.time, 'shortTime');
 
+                        store.set('datewalked', $scope.mydate);
+
                         var ref = firebase.database().ref().child("Users").child($scope.username).child('walkingDogs');
                         ref.once("value").then(function(snapshot) {
                             $scope.childcount = snapshot.numChildren();
@@ -354,6 +356,7 @@ angular.module('starter.controllers', [])
                 mobile: mobile,
                 picture: 'none',
                 rating: 3,
+
             });
 
             // firebase.auth().onAuthStateChanged(function(user) {
@@ -392,13 +395,22 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('walkCtrl', function($scope, $stateParams, $state, store, $rootScope) {
+.controller('walkCtrl', function($scope, $stateParams, $state, store, $rootScope, $firebaseArray) {
+
+    var user = firebase.auth().currentUser;
+    var fbuser = store.get('user');
+
+    if (user) {
+        $scope.username = user.uid;
+        $scope.displayname = user.fname;
+    } else {
+        $scope.username = fbuser.id;
+        $scope.displayname = fbuser.name;
+    }
 
     $scope.dogname = store.get("viewingdog")
     $scope.dogimage = store.get("viewingdogimg")
     console.log($scope.dogimage + ", " + $scope.dogname)
-
-
 
     // check for Geolocation support
     if (navigator.geolocation) {
@@ -483,31 +495,35 @@ angular.module('starter.controllers', [])
 
     $scope.$on('timer-stopped', function(event, data) {
         console.log('Timer Stopped - data = ', data);
-
         //Calculating the distance based on how much time the user walks their dog for
         if(data.hours){
           cosole.log("hours");
           distance = speed*data.hours;
+          $scope.time = data.hours;
           cosole.log("d= " + distance);
         }
         if (data.minutes) {
           console.log("minutes");
           $scope.distance = speed*(data.minutes/60);
+          $scope.time = data.minutes/60;
           console.log("d= " + $scope.distance);
         }
         if(data.hours && data.minutes){
           cosole.log("Hours and minutes");
           $scope.distance = speed*data.hours + speed*(data.minutes/60);
+          $scope.time = data.hours + (data.minutes/60)
           console.log("d= " + $scope.distance);
         }
         if (data.minutes && data.seconds) {
           console.log("minutes and seconds");
           $scope.distance = speed*(data.minutes/60) + speed*(data.seconds/3600);
+          $scope.time = (data.minutes/60) + (data.seconds/3600)
           console.log("d= " + $scope.distance);
         }
         if (data.hours && data.minutes && data.seconds) {
           cosole.log("Hours minutes and seconds");
           $scope.distance = speed*data.hours + speed*(data.minutes/60) + speed*(data.seconds/3600);
+          $scope.time = data.hours + (data.minutes/60) + (data.seconds/3600)
           console.log("d= " + $scope.distance);
         }
 
@@ -515,9 +531,32 @@ angular.module('starter.controllers', [])
     });
 
     $scope.finishWalk = function() {
+
+
         $scope.stopTimer();
         store.set('finalDistance', $scope.distance);
+        $scope.date = store.get('datewalked');
+
+        var ref = firebase.database().ref().child("Users").child($scope.username).child("History");
+        ref.once("value").then(function(snapshot) {
+            $scope.childcount = snapshot.numChildren();
+            $scope.addone = $scope.childcount + 1;
+            store.set("historycount", $scope.addone)
+        });
+
+        var myhistorycount = store.get("historycount")
+        ref.child(myhistorycount).set({
+            pic: $scope.dogimage,
+            name: $scope.dogname,
+            time: $scope.time,
+            distance: $scope.distance,
+            owner: $scope.username,
+            date: $scope.date,
+        });
+
         $state.go('rating');
+
+
     }
 
 
@@ -1028,4 +1067,31 @@ angular.module('starter.controllers', [])
 
 .controller('thanksCtrl', function($scope, $stateParams) {})
 
-.controller('historyCtrl', function($scope, $stateParams) {});
+.controller('historyCtrl', function($scope, $stateParams, $state, store, $firebaseArray, $ionicPopup) {
+
+  var user = firebase.auth().currentUser;
+  var fbuser = store.get('user');
+
+  if (user) {
+      $scope.username = user.uid;
+      $scope.displayname = user.fname;
+  } else {
+      $scope.username = fbuser.id;
+      $scope.displayname = fbuser.name;
+  }
+
+  var arrayref = firebase.database().ref().child("Users").child($scope.username).child("History");
+  $scope.dogs = $firebaseArray(arrayref);
+
+  $scope.addgoal = function(){
+    $ionicPopup.alert({
+        title: 'Feature not added',
+        template: 'This feature could be added in, allowing users to set a distance goal..',
+        cssClass: 'forfidopopup'
+    });
+  }
+
+
+
+
+});

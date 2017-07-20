@@ -1519,3 +1519,132 @@ input[type="file"]{
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
 }
+
+/* History Page */
+
+.history{
+	background-color: #ecf0f1;
+}
+
+.history .bar.bar-header.tabsheader{
+	height:30vh
+}
+
+.history .button.button-icon:before{
+	position: absolute;
+	font-size: 50px;
+	left:3vh;
+	top:1.2vh;
+	color: #F6F7F2;
+}
+
+.history .h1.title{
+	position: absolute;
+	font-size: 40px;
+	top:1.5vh;
+}
+
+.history .icon.ion-plus-round{
+	position: absolute;
+	font-size: 50px;
+	right:4vh;
+	color: #F6F7F2;
+
+}
+
+.history .h2.title{
+	top:20vh;
+}
+
+.history .cardPic{
+	width: 100px;
+	height: 100px;
+	margin-top: 5%;
+	float: right;
+	margin-right: 5%;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: center;
+	overflow: hidden;
+}
+
+.history h1{
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 4%;
+	font-size: 24px;
+}
+
+.history h2{
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #A7A9AC;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 16%;
+	font-size: 16px;
+}
+
+.history h3{
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #A7A9AC;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 25%;
+	font-size: 16px;
+}
+
+.history h4{
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	color: #A7A9AC;
+	position: absolute;
+	margin-left: 5%;
+	margin-top: 34%;
+	font-size: 16px;
+}
+
+.history .list{
+	top:30vh;
+	width:90% !important;
+}
+
+.history .item1{
+	font-family: 'Fredoka One', cursive;
+	color: #68B4A6;
+	background-color: #ecf0f1;
+	border:none;
+	font-size: 25px;
+	margin-bottom: 15px;
+	width: 90% !important;
+}
+.history .item2{
+	font-family: 'Fredoka One', cursive;
+	color: #6C6049;
+	background-color: #ecf0f1;
+	border:none;
+	font-size: 25px;
+	margin-top: 35px;
+	width: 90% !important;
+}
+
+.history .card1{
+	width: 90vw !important;
+	height: 22vh;
+	background-color: #fff;
+	display: block;
+	box-shadow: 0px 0px 5px #8e8e8e;
+	margin-top: 5%;
+}
+
+.history .card2{
+	width: 90vw !important;
+	height: 22vh;
+	background-color: #fff;
+	display: block;
+	box-shadow: 0px 0px 5px #8e8e8e;
+	margin-top: 5%;
+}
