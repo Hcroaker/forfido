@@ -1026,4 +1026,6 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('thanksCtrl', function($scope, $stateParams) {});
+.controller('thanksCtrl', function($scope, $stateParams) {})
+
+.controller('historyCtrl', function($scope, $stateParams) {});
