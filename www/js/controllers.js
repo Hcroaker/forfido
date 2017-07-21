@@ -395,7 +395,12 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('walkCtrl', function($scope, $stateParams, $state, store, $rootScope, $firebaseArray) {
+.controller('walkCtrl', function($scope, $stateParams, $state, store, $rootScope, $firebaseArray, $firebaseObject) {
+
+    $scope.dog = store.get("dog");
+
+
+    console.log($scope.dog.$id);
 
     var user = firebase.auth().currentUser;
     var fbuser = store.get('user');
@@ -534,6 +539,8 @@ angular.module('starter.controllers', [])
 
 
         $scope.stopTimer();
+
+        //Adding the dog just walked to the history child.
         store.set('finalDistance', $scope.distance);
         $scope.date = store.get('datewalked');
 
@@ -553,6 +560,11 @@ angular.module('starter.controllers', [])
             owner: $scope.username,
             date: $scope.date,
         });
+
+        //Removing the dog from the walkingDogs child
+        var ref = firebase.database().ref().child("Users").child($scope.username).child('walkingDogs').child($scope.dog.$id);
+        $scope.dogs = $firebaseObject(ref);
+        $scope.dogs.$remove($scope.dog);
 
         $state.go('rating');
 
@@ -821,6 +833,7 @@ angular.module('starter.controllers', [])
                 type: 'button-positive',
                 onTap: function(e) {
                     $state.go("walk");
+                    store.set("dog", dog);
                     store.set("viewingdog", dog.name)
                     store.set("viewingdogimg", dog.pic)
                     store.set("dogownerid", dog.ownerid)
